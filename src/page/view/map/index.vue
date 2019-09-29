@@ -1,8 +1,8 @@
 <template>
     <div>
-        map
+        <button @click="handleClick">Click me!</button>
+        <div class="map" id="map"/>
     </div>
 </template>
 
-<script src="./index.js" />
 <style src="./index.scss" lang="scss" scoped></style>

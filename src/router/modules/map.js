@@ -1,19 +1,12 @@
 /** 
  * 路由配置
  */
-import Layout from 'components/layout/index.vue'
 
 let routes = {
+    name: 'map',
     path: '/map',
-    component: Layout,
     meta: { title: 'map' },
-    children: [
-    {
-        name: 'map-list',
-        path: '/map/map-list',
-        component: () => import('@/page/view/map/index.vue'),
-        meta: { title: 'MapList' }
-    }]
+    component: (resolve) => require(['@/page/view/map'], resolve)
 }
 
 export default [routes]

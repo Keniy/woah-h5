@@ -5,11 +5,9 @@ import routers from './auto-import'
 Vue.use(VueRouter)
 
 export const constantRouterMap = [
-    { path: '/', redirect: '/map/map-list' },
+    { path: '/', name: 'home', redirect: '/map' },
     ...routers
 ]
-
-console.log('constantRouterMap', constantRouterMap)
 
 const router = new VueRouter({
     mode: 'history',
@@ -19,6 +17,9 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
     next()
+})
+
+router.afterEach((to, from) => {
 })
 
 export default router

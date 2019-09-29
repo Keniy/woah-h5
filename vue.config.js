@@ -7,7 +7,15 @@ module.exports = {
     lintOnSave: false,
     devServer: {
         port: 1010,
-        proxy: null
+        proxy: {
+            '/oss-upload': {
+                target: 'http://lzcloud-test-oss.oss-cn-shenzhen.aliyuncs.com',
+                changeOrigin: true,
+                pathRewrite: {
+                    '^/oss-upload': ''
+                }
+            }
+        }
     },
     pages: {
         index: {
@@ -16,6 +24,10 @@ module.exports = {
             filename: 'index.html'
         }
     },
+    transpileDependencies: [
+        'vue-echarts',
+        'resize-detector'
+    ],
     productionSourceMap: false,
     css: {
         extract: true,
@@ -35,31 +47,32 @@ module.exports = {
     },
     // 扩展 webpack 配置，使 packages 加入编译
     chainWebpack: config => {
-        config.module
-            .rule('js')
-            .include
-            .add('/src/')
-            .end()
-            .use('babel')
-            .loader('babel-loader')
-            .tap(options => {
-                // 修改它的选项...
-                return options
-            })
-        config.module
-            .rule('vue')
-            .use('vue-loader')
-            .loader('vue-loader')
-            .tap(options => {
-                // 修改它的选项...
-                return options
-            })
+        // config.module
+        //     .rule('js')
+        //     .include
+        //     .add('/src/')
+        //     .end()
+        //     .use('babel')
+        //     .loader('babel-loader')
+        //     .tap(options => {
+        //         // 修改它的选项...
+        //         return options
+        //     })
+        // config.module
+        //     .rule('vue')
+        //     .use('vue-loader')
+        //     .loader('vue-loader')
+        //     .tap(options => {
+        //         // 修改它的选项...
+        //         return options
+        //     })
         config.resolve.alias
             .set('@', resolve('src'))
             .set('src', resolve('src'))
             .set('components', resolve('src/components'))
             .set('page', resolve('src/page'))
             .set('api', resolve('src/api'))
+            .set('common', resolve('src/common'))
             /* 添加分析工具*/
         if (process.env.NODE_ENV === 'production') {
             if (process.env.npm_config_report) {
