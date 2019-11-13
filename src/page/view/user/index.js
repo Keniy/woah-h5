@@ -5,7 +5,6 @@ import WoahSelect from 'components/woah-select'
 import { oss, accessId, accessKey, host, bucket } from 'common/aliOss'
 import { post } from 'common/http'
 import Base64 from 'Base64'
-import Crypto from 'crypto'
 
 @Component({
     name: 'UserList',
@@ -34,14 +33,52 @@ export default class UserList extends Vue {
     }]
     value2 = []
     fileList = []
+    valueText = null
+
+    tableData = [
+        {
+            date: '2016-05-02',
+            name: '袜子',
+            money: 123,
+            num: 1
+        },
+        {
+            date: '2016-05-04',
+            name: '手套',
+            money: 213,
+            num: 1
+        },
+        {
+            date: '2016-05-01',
+            name: '帽子',
+            money: 3,
+            num: 1
+        },
+        {
+            date: '2016-05-03',
+            name: '管他呢',
+            money: 321,
+            num: 1
+        }
+    ]
 
     created() {
         this.showMessage('from UserList')
+        
+    }
+    
+    mounted() {
+        console.log(this.$refs['down'])
+
+        this.handleKeyDown()
     }
 
     handleClick() {
         this.loading = false
         alert(this.loading)
+    }
+
+    handleKeyDown() {
     }
 
     /**
@@ -63,7 +100,6 @@ export default class UserList extends Vue {
             ]
         }
         let policy = Base64.encode(JSON.stringify(policyText))
-        // let bytes = Crypto.Hmac(Crypto.)
 
         let formData = new FormData()
         formData.append('name', option.file.name)
@@ -89,4 +125,11 @@ export default class UserList extends Vue {
         //todo
     }
     
+    deleteRow(index, rows) {
+        rows.splice(index, 1);
+    }
+    
+    AddRow(index, rows) {
+        rows.splice(index, 0, this.tableData[index]);
+    }
 }
