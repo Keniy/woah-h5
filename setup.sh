@@ -1,7 +1,7 @@
 image_version=`date +%Y%m%d%H%M`;
 echo $image_version;
 # cd woah-h5
-# git pull --rebase origin master;
+git pull --rebase origin master;
 docker stop woah-h5;
 docker rm woah-h5;
 docker build -t woah-h5:$image_version .;
