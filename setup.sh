@@ -4,7 +4,7 @@ echo v1.0;
 git pull --rebase origin master;
 docker stop woah-h5;
 docker rm woah-h5;
-docker build -t woah-h5:v1.0 .;
+docker build -t 49.233.192.53:5000/woah-h5:v1.0 .;
 echo '---------build end-----------------'
 docker tag woah-h5:v1.0 49.233.192.53:5000/woah-h5:v1.0;
 echo '-----------docker tag end------------'
