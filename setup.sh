@@ -4,11 +4,11 @@ echo v1.0;
 git pull --rebase origin master;
 docker stop woah-h5;
 docker rm woah-h5;
-docker build -t 49.233.192.53:5000/woah-h5:v1.0 .;
+docker build -t woah-h5:v1.0 .;
 echo '---------build end-----------------'
-docker tag woah-h5:v1.0 49.233.192.53:5000/woah-h5:v1.0;
+# docker tag woah-h5:v1.0 49.233.192.53:5000/woah-h5:v1.0;
 echo '-----------docker tag end------------'
-docker push 49.233.192.53:5000/woah-h5:v1.0;
+# docker push 49.233.192.53:5000/woah-h5:v1.0;
 echo '-----------docker push end------------'
 docker images;
 docker run -p 1010:80 -d --name woah-h5 woah-h5:v1.0;
