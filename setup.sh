@@ -15,4 +15,4 @@ docker run -p 1010:80 -d --name woah-h5 woah-h5:v1.0;
 # -v ~/docker-data/house-web/appsettings.json:/app/appsettings.json -v ~/docker-data/house-web/NLogFile/:/app/NLogFile   --restart=always
 docker logs woah-h5;
 #删除build过程中产生的镜像    #docker image prune -a -f
-docker rmi $(docker images -f "dangling=true" -q)
+# docker rmi $(docker images -f "dangling=true" -q)
