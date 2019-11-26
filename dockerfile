@@ -1,12 +1,12 @@
-FROM node:latest
-WORKDIR /
-COPY package*.json ./
-RUN npm config rm proxy
-RUN npm config rm https-proxy
-RUN npm install -g cnpm --registry=https://registry.npm.taobao.org
-RUN cnpm install
-COPY . .
-RUN npm run build
+# FROM node:latest
+# WORKDIR /
+# COPY package*.json ./
+# RUN npm config rm proxy
+# RUN npm config rm https-proxy
+# RUN npm install -g cnpm --registry=https://registry.npm.taobao.org
+# RUN cnpm install
+# COPY . .
+# RUN npm run build
 
 # production stage
 FROM nginx:latest
