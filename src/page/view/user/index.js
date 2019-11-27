@@ -62,6 +62,22 @@ export default class UserList extends Vue {
         }
     ]
 
+    ruleForm = {
+        // name: null,
+        // age: null
+    }
+
+    ruleFormOpts = [
+        {
+            label: '姓名',
+            prop: 'name'
+        },
+        {
+            label: '年龄',
+            prop: 'age'
+        }
+    ]
+
     created() {
         this.showMessage('from UserList')
         

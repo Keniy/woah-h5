@@ -43,6 +43,13 @@
                 </el-row>
             </el-table-column>
         </el-table>
+
+        <el-form :model="ruleForm">
+            <el-form-item v-for="(item, index) in ruleFormOpts" :key="index" :label="item.label">
+                <el-input v-model="ruleForm[item.prop]"/>
+            </el-form-item>
+            {{ ruleForm }}
+        </el-form>
     </div>
 </template>
 
