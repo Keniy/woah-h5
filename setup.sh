@@ -2,6 +2,7 @@ image_version=`date +%Y%m%d%H%M`;
 echo v1.0;
 # cd woah-h5
 git pull --rebase origin master;
+docker version;
 docker images;
 echo '-----------docker images --------------'
 docker stop woah-h5;
