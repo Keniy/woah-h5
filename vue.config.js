@@ -2,11 +2,14 @@ const path = require('path');
 function resolve(dir) {
     return path.join(__dirname, dir)
 }
+const Timestamp = new Date().getTime()
+const Version = "v1.0"
 
 module.exports = {
-    publicPath: process.env.NODE_ENV === 'production'
-    ? './'
-    : '/',
+    // assetsDir: 'public',
+    publicPath: '/',
+    outputDir: 'dist',
+    indexPath: 'index.html',
     lintOnSave: false,
     devServer: {
         port: 1010,
@@ -16,6 +19,13 @@ module.exports = {
                 changeOrigin: true,
                 pathRewrite: {
                     '^/oss-upload': ''
+                }
+            },
+            '/jsonp': {
+                target: 'https://fpcy.beijing.chinatax.gov.cn',
+                changeOrigin: true,
+                pathRewrite: {
+                    '^/jsonp': ''
                 }
             }
         }
@@ -69,7 +79,7 @@ module.exports = {
         //         // 修改它的选项...
         //         return options
         //     })
-        config.resolve.alias
+        config.resolve.alias 
             .set('@', resolve('src'))
             .set('src', resolve('src'))
             .set('components', resolve('src/components'))
@@ -95,6 +105,10 @@ module.exports = {
             assetFilter: function(assetFilename) {
 	    		return assetFilename.endsWith('.js')
 	    	}
+        },
+        output: {
+            filename: `[name].${Version}.${Timestamp}.js`,
+            chunkFilename: `[name].${Version}.${Timestamp}.js`,
         }
     }
 }

@@ -5,7 +5,7 @@ import routers from './auto-import'
 Vue.use(VueRouter)
 
 export const constantRouterMap = [
-    { path: '/', name: 'home', redirect: '/map' },
+    { path: '/', name: 'home', redirect: '/user' },
     ...routers
 ]
 

@@ -1,6 +1,18 @@
 <template>
     <div>
-        <router-view :key="key"/>
+        <el-container>
+            <el-aside width="200px">
+            </el-aside>
+
+            <el-container>
+                <el-header>
+                </el-header>
+
+                <el-main>
+                    <router-view :key="key"/>
+                </el-main>
+            </el-container>
+        </el-container>
     </div>
 </template>
 

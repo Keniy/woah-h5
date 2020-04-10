@@ -39,10 +39,10 @@ let axiosConfig = (option = {}) => {
 let axiosCreater = (resquestConfig = {}) => {
     let nax = axios.create(resquestConfig)
     nax.interceptors.request.use(respConfig => {
-        let token = getToken()
-        if (!token) {
-            return null
-        }
+        // let token = getToken()
+        // if (!token) {
+        //     return null
+        // }
         return respConfig
     })
     return nax
@@ -51,6 +51,13 @@ let axiosCreater = (resquestConfig = {}) => {
 export function post(url, data) {
     let nax = axiosCreater(axiosConfig())
     return nax.post(url, processData(data)).then((res) => {
+        return res.data
+    })
+}
+
+export function get(url, data) {
+    let nax = axiosCreater(axiosConfig())
+    return nax.get(url, {params: processData(data)}).then((res) => {
         return res.data
     })
 }

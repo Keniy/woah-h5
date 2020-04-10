@@ -19,6 +19,7 @@ export default class MapList extends Vue{
 
     mounted() {
         this.initMap()
+        
     }
 
     handleClick() {

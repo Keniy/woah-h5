@@ -5035,6 +5035,11 @@ javascript-stringify@^1.6.0:
   resolved "https://registry.npmjs.org/javascript-stringify/-/javascript-stringify-1.6.0.tgz#142d111f3a6e3dae8f4a9afd77d45855b5a9cce3"
   integrity sha1-FC0RHzpuPa6PSpr9d9RYVbWpzOM=
 
+jquery@^3.4.1:
+  version "3.4.1"
+  resolved "http://mirror.devcloud.com/repository/NPM-repo-group/jquery/-/jquery-3.4.1.tgz#714f1f8d9dde4bdfa55764ba37ef214630d80ef2"
+  integrity sha1-cU8fjZ3eS9+lV2S6N+8hRjDYDvI=
+
 js-base64@^2.1.8:
   version "2.5.1"
   resolved "https://registry.npmjs.org/js-base64/-/js-base64-2.5.1.tgz#1efa39ef2c5f7980bb1784ade4a8af2de3291121"
@@ -8986,6 +8991,11 @@ vue-hot-reload-api@^2.3.0:
   resolved "https://registry.npmjs.org/vue-hot-reload-api/-/vue-hot-reload-api-2.3.4.tgz#532955cc1eb208a3d990b3a9f9a70574657e08f2"
   integrity sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog==
 
+vue-jsonp@^0.1.8:
+  version "0.1.8"
+  resolved "http://mirror.devcloud.com/repository/NPM-repo-group/vue-jsonp/-/vue-jsonp-0.1.8.tgz#2cec054b0aca5a9c7de0146b16b2acbeec2d73a7"
+  integrity sha1-LOwFSwrKWpx94BRrFrKsvuwtc6c=
+
 vue-loader@^15.7.0, vue-loader@^15.7.1:
   version "15.7.1"
   resolved "https://registry.npmjs.org/vue-loader/-/vue-loader-15.7.1.tgz#6ccacd4122aa80f69baaac08ff295a62e3aefcfd"
@@ -9200,6 +9210,11 @@ websocket-extensions@>=0.1.1:
   version "0.1.3"
   resolved "https://registry.npmjs.org/websocket-extensions/-/websocket-extensions-0.1.3.tgz#5d2ff22977003ec687a4b87073dfbbac146ccf29"
   integrity sha512-nqHUnMXmBzT0w570r2JpJxfiSD1IzoI+HGVdd3aZ0yNi3ngvQ4jv1dtHt5VGxfI2yj5yqImPhOK4vmIh2xMbGg==
+
+weixin-js-sdk@^1.4.0-test:
+  version "1.4.0-test"
+  resolved "http://mirror.devcloud.com/repository/NPM-repo-group/weixin-js-sdk/-/weixin-js-sdk-1.4.0-test.tgz#612bbafcc97ad84f5afe6dc84701534cc59fc3ca"
+  integrity sha1-YSu6/Ml62E9a/m3IRwFTTMWfw8o=
 
 which-module@^1.0.0:
   version "1.0.0"

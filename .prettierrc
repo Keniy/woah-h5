@@ -1,0 +1,12 @@
+{
+  "semi": false,
+  "singleQuote": true,
+  "endOfLine": "auto",
+  "jsxBracketSameLine": true,
+  "trailingComma": "es5",
+  "printWidth": 180,
+  "proseWrap": "never",
+  "bracketSpacing": true,
+  "parser": "vue",
+  "overrides": [{ "files": ".prettierrc", "options": { "parser": "json" } }]
+}

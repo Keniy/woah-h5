@@ -1,10 +1,11 @@
 import OSS from 'ali-oss'
 
-export const accessId = 'LTAIgi1tzJjSpI2A'
-export const accessKey = '4OYLnCLjtj0h94NKzYOU72RrGGmqBj'
-export const host = 'http://lzcloud-test-oss.oss-cn-shenzhen.aliyuncs.com/'
-export const endPoint = 'http://oss-cn-shenzhen.aliyuncs.com'
-export const bucket = 'lzcloud-test-oss'
+export const accessId = ''
+export const accessKey = ''
+export const host = ''
+export const endPoint = ''
+export const bucket = ''
+export const region = ''
 
 export const oss = {
     /**
@@ -28,7 +29,7 @@ export const oss = {
     createOssClient() {
         return new Promise((resolve, reject) => {
             let client = new OSS({
-                region: 'oss-cn-shenzhen',
+                region: region,
                 accessKeyId: accessId,
                 accessKeySecret: accessKey,
                 bucket: bucket
