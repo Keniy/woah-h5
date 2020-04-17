@@ -1,0 +1,70 @@
+.app-setting {
+    position: absolute;
+    top: 240px;
+    right: 10px;
+    width: 48px;
+    height: 48px;
+    background: $theme-color;
+    text-align: center;
+    cursor: pointer;
+    @include base-background() {
+        background: themed('background-color');
+        border-color: themed('border-color');
+    }
+    &:hover {
+        @include base-background() {
+            background: themed('background-color');
+            border-color: themed('border-color');
+        }
+    }
+    i {
+        transform: translateY(2px);
+        font-size: 40px;
+        color: white;
+    }
+}
+
+.drawer-container {
+    padding: 12px;
+    color: $font-color-main;
+    .drawer-box {
+        width: 100%;
+        &:first-child {
+            margin-top: 24px;
+        }
+        label {
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 8px;
+        }
+        .drawer-content {
+            cursor: pointer;
+            img {
+                &:last-child {
+                    margin-left: 8px;
+                }
+            }
+            .drawer-tag {
+                width: 20px;
+                height: 20px;
+                border-radius: 2px;
+                display: block;
+                float: left;
+                cursor: pointer;
+                text-align: center;
+                &:not(:first-child) {
+                    margin-left: 4px;
+                }
+                .el-icon-check {
+                    color: white;
+                }
+            }
+            .default {
+                background: $color-blue;
+            }
+            .red {
+                background: $color-red;
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+// 主题色
+$theme-color: #409EFF;
+
+// 字体色
+$font-color-main: rgba(0, 0, 0, .8); // 主字体色
+$font-color-sub: rgba(0, 0, 0, .6); // 次字体色
+
+//-- 元素色
+$color-white: 			#fff;		// 白
+$color-grey-light: 		#ddd;		// 浅灰
+$color-grey:            #707070;    // 灰
+$color-grey-dark: 		#585f6f;	// 深灰
+$color-black:            #333;       // 黑
+$color-red: 			#eb2f18;	// 红
+$color-blue: 			#409EFF;	// 蓝
+
+// 基础字体
+$font-size-base: 14px;
+$font-size-small: 12px;
+$font-size-normal: 16px;
+$font-size-medium: 18px;
+$font-size-large: 20px;
+$font-size-large-big: 24px;
+$font-size-title: 32px;
+
+// 字体粗细
+$font-normal: 400;
+$font-medium: 500;
+$font-large: 600;
+
+// 行高
+$line-height-normal: 28px;
+$line-height-base: 24px;
+$line-height-medium: 32px;
+$line-height-large: 40px;
+
+// 字体
+$font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;

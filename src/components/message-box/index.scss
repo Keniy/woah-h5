@@ -1,0 +1,36 @@
+.message-btn {
+    width: 100%;
+}
+.message-content {
+    width: 100%;
+    padding: 8px;
+    .message-item {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        &:not(:last-child) {
+            padding-bottom: 8px;
+            margin-bottom: 8px;
+            border-bottom: 1px solid #e8e8e8;
+        }
+        .message-icon {
+            text-align: center;
+            width: 50px;
+            .el-icon-s-comment {
+                transform: translateY(2px);
+                font-size: 20px;
+            }
+        }
+        .message-detail {
+            width: 250px;
+            label {
+                width: 100%;
+                display: inline-block;
+                &:last-child {
+                    margin-top: 8px;
+                    color: $font-color-sub;
+                }
+            }
+        }
+    }
+}

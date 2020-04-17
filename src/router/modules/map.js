@@ -6,7 +6,7 @@ let routes = {
     name: 'map',
     path: '/map',
     meta: { title: 'map' },
-    component: (resolve) => require(['@/page/view/map'], resolve)
+    component: (resolve) => require(['@/views/page/map'], resolve)
 }
 
 export default [routes]

@@ -1,8 +1,6 @@
 import Vue from 'common/base'
 import { Component } from 'vue-property-decorator'
 import template from './index.vue'
-import $ from 'jquery'
-
 @Component({
     name: 'yearly-bill',
     mixins: [ template ]

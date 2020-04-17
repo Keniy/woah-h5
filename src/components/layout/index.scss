@@ -1,0 +1,26 @@
+.app-container {
+    height: calc(100vh - 60px);
+}
+
+.app-main {
+    padding: 24px;
+    height: 100%;
+}
+
+.app-header {
+    padding-left: 0!important;
+    padding-right: 0!important;
+}
+
+.el-button {
+    @include base-background() {
+        background: themed('background-color');
+        border-color: themed('border-color');
+    }
+    &:hover {
+        @include base-background() {
+            background: themed('background-color');
+            border-color: themed('border-color');
+        }
+    }
+}

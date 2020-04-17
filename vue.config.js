@@ -20,13 +20,6 @@ module.exports = {
                 pathRewrite: {
                     '^/oss-upload': ''
                 }
-            },
-            '/jsonp': {
-                target: 'https://fpcy.beijing.chinatax.gov.cn',
-                changeOrigin: true,
-                pathRewrite: {
-                    '^/jsonp': ''
-                }
             }
         }
     },
@@ -54,7 +47,7 @@ module.exports = {
 
             },
             sass: {
-
+                prependData: `@import "@/style/base/base.scss";`
             }
         }
     },
@@ -71,21 +64,23 @@ module.exports = {
         //         // 修改它的选项...
         //         return options
         //     })
-        // config.module
-        //     .rule('vue')
-        //     .use('vue-loader')
-        //     .loader('vue-loader')
-        //     .tap(options => {
-        //         // 修改它的选项...
-        //         return options
-        //     })
+        config.module
+            .rule('vue')
+            .use('vue-loader')
+            .loader('vue-loader')
+            .tap(options => {
+                // 修改它的选项...
+                return options
+            })
         config.resolve.alias 
             .set('@', resolve('src'))
             .set('src', resolve('src'))
             .set('components', resolve('src/components'))
-            .set('page', resolve('src/page'))
+            .set('page', resolve('src/views/page'))
+            .set('views', resolve('src/views'))
             .set('api', resolve('src/api'))
             .set('common', resolve('src/common'))
+            .set('store', resolve('src/store'))
             /* 添加分析工具*/
         if (process.env.NODE_ENV === 'production') {
             if (process.env.npm_config_report) {

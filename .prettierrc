@@ -8,5 +8,6 @@
   "proseWrap": "never",
   "bracketSpacing": true,
   "parser": "vue",
+  "tabWidth": 4,
   "overrides": [{ "files": ".prettierrc", "options": { "parser": "json" } }]
 }

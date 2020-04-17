@@ -1,0 +1,42 @@
+
+.app-header {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    .app-aside {
+        flex: 1;
+    }
+    .app-user-wrapper {
+        float: right;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        border-bottom: solid 1px #e6e6e6;
+        .app-user-message {
+            padding: 0 18px;
+            height: 60px;
+            cursor: pointer;
+            &:hover{
+                background: #ddd;
+            }
+            .app-tips {
+                transform: translateY(20px);
+            }
+        }
+        .app-user-info {
+            cursor: pointer;
+            line-height: 60px;
+            &:hover{
+                background: #ddd;
+            }
+            .el-dropdown-link {
+                padding: 12px;
+                img {
+                    transform: translateY(6px);
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+        }
+    }
+}

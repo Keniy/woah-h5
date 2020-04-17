@@ -2,9 +2,6 @@ import Vue from 'common/base'
 import { Component } from 'vue-property-decorator'
 import template from './index.vue'
 import { WoahSelect, ProgressCircle } from 'components'
-import { oss, accessId, accessKey, host, bucket } from '@/common/aliOss'
-import { post, get } from 'common/http'
-import Base64 from 'Base64'
 @Component({
     name: 'UserList',
     mixins: [template],
@@ -115,22 +112,8 @@ export default class UserList extends Vue {
     ]
 
     created() {
-        this.showMessage('from UserList')
-        
-        this.handleLoadJsonp()
-        
-        this.handleTransData()   
-
         let resultMenu = this.listToTree(this.menuList)
-        console.log('resultMenu', resultMenu);
-        
     }
-    
-    mounted() {
-        console.log('accessId', accessId)
-        this.handleKeyDown()
-    }
-
     handleTransData() {
         let _temp = this.temp.split(';')
         let arr = []
@@ -144,40 +127,6 @@ export default class UserList extends Vue {
                 arr.push(obj)
             }
         })
-        console.log(arr);
-        
-    }
-
-    handleLoadJsonp() {
-        // get('https://fpcy.beijing.chinatax.gov.cn/NWebQuery/yzmQuery', {
-        //     callbackName: 'jQuery110209516835091336624_1575597807190',
-        //     fpdm: '1100174160',
-        //     fphm: '00021697',
-        //     r: '0.40799358404021135',
-        //     v: 'V2.0.00_001',
-        //     nowTime: new Date().getTime(),
-        //     _: '1575597807192'
-        // }).then(resp => {
-        //     console.log(resp);
-            
-        // })
-        this.$jsonp('https://fpcy.beijing.chinatax.gov.cn/NWebQuery/yzmQuery', {
-            callbackName: 'jQuery110209516835091336624_1575597807190',
-            fpdm: '1100174160',
-            fphm: '00021697',
-            r: '0.40799358404021135',
-            v: 'V2.0.00_001',
-            nowTime: new Date().getTime(),
-            _: '1575597807192'
-        }).then(resp => {
-            console.log('resp', resp);
-            
-        })
-    }
-
-    handleCallback(resp) {
-        console.log('from jsonp data', resp);
-        
     }
 
     handleClick() {
@@ -278,5 +227,11 @@ export default class UserList extends Vue {
                 }
             })
         })
+    }
+
+    onCellStyle({ row, column, columnIndex }) {
+        if (columnIndex === 1) {
+            return 'red'
+        }
     }
 }

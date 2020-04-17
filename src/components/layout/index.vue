@@ -1,20 +1,33 @@
 <template>
     <div>
-        <el-container>
-            <el-aside width="200px">
-            </el-aside>
-
-            <el-container>
-                <el-header>
+        <el-container class="app-container" :class="defaultTheme">
+            <template v-if="isVertical">
+                <el-header class="app-header">
+                    <header-bar />
                 </el-header>
-
-                <el-main>
-                    <router-view :key="key"/>
-                </el-main>
-            </el-container>
+                <el-container>
+                    <el-main class="app-main">
+                        <keep-alive :include="cachedViews" :max="200">
+                            <router-view :key="key" />
+                        </keep-alive>
+                    </el-main>
+                </el-container>
+            </template>
+            <template v-else>
+                <el-container>
+                    <el-header class="app-header">
+                        <header-bar />
+                    </el-header>
+                    <el-main class="app-main">
+                        <keep-alive :include="cachedViews" :max="200">
+                            <router-view :key="key" />
+                        </keep-alive>
+                    </el-main>
+                </el-container>
+            </template>
+            <drawer />
         </el-container>
     </div>
 </template>
 
-<script src="./index"></script>
-<style src="./index.scss" lang="scss" scoped/>
+<style src="./index.scss" lang="scss" />
