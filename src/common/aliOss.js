@@ -5,7 +5,7 @@ export const accessKey = ''
 export const host = ''
 export const endPoint = ''
 export const bucket = ''
-export const region = '' 
+export const region = ''
 
 export const oss = {
     /**
